@@ -55,7 +55,7 @@ namespace FinamExample
              _config = new Config()
             {
                 //Ключ не бесконечный, работает какое то время.. 
-                Token = "CAEQxoWuAhoY/ky12uZYIubcy65GP28dOVcGYI0TZlR9",
+                Token = "****************",
                 //Работаем со множественными кодами, код вы можете получить у Common Trade API
                 ClientIds = new List<string>()
                 {
