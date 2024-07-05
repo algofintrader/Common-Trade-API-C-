@@ -136,7 +136,7 @@ namespace FinamExample
                 return;
 
             //Клиент ID можно взять из конфига... тут прописан просто напрямик
-            var res = await _connector.SendOrderAsync("408868R3LLJ", "SNGS", Finam.TradeApi.Proto.V1.BuySell.Buy, 1,30);
+            var res = await _connector.SendOrderAsync("408868*****", "SNGS", Finam.TradeApi.Proto.V1.BuySell.Buy, 1,30);
 
             if (res != null)
             {
