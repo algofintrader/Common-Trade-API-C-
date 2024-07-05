@@ -1,0 +1,82 @@
+syntax = "proto3";
+
+package proto.tradeapi.v1;
+
+option csharp_namespace = "Finam.TradeApi.Proto.V1";
+
+import "google/protobuf/timestamp.proto";
+import "proto/tradeapi/v1/common.proto";
+
+// Stop order status.
+// Состояние заявки.
+
+service Candles {
+  // Returns the list of Stop Orders.
+  // Возвращает список стоп-заявок.
+
+  rpc GetIntradayCandles(GetCandlesRequest) returns (CandleResultRequest);
+ 
+}
+
+
+message GetCandlesRequest {
+ 
+ 
+  string securityBoard = 1;
+  
+  string securityCode = 2;
+
+  string timeFrame = 3;
+
+  string from = 4;
+
+  string to = 5;
+
+  int32 count = 6;
+}
+
+message CandleResultRequest
+{
+	repeated IntradayCandle candles = 1;
+}
+
+message IntradayCandle
+{
+	string timestamp = 1;
+	double open = 2;
+	double close = 3;
+	double high = 4;
+	double low = 5;
+	int32 volume = 6;
+}
+
+/*
+//!!!!! _ ВАЖНОЕ!
+// Request for the list of Stop Orders.
+// Запрос стоп-заявок.
+message GetCandlesRequest {
+  // Trade Account ID.
+  // Идентификатор торгового счёта.
+  string client_id = 1;
+  // Include executed stops in response.
+  // Вернуть исполненные стоп-заявки.
+  bool include_executed = 2;
+  // Include canceled stops in response.
+  // Вернуть отмененные стоп-заявки.
+  bool include_canceled = 3;
+  // Include active stops in response.
+  // Вернуть активные стоп-заявки.
+  bool include_active = 4;
+}
+
+//!!!!! _ ВАЖНОЕ!
+// Result of Stop Orders request.
+// Результат запроса стоп-заявок.
+message GetCandlesResult {
+  // Trade Account ID.
+  // Идентификатор торгового счёта.
+  string client_id = 1;
+  // Stop Orders List.
+  // Список стоп-заявок.
+  repeated Stop stops = 2;
+}*/

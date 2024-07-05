@@ -1,0 +1,22 @@
+﻿<Window x:Class="FinamExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinamExample"
+        mc:Ignorable="d"
+        Title="Пример работы с финам апи" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="78" />
+            <RowDefinition  />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content="Старт" Name="StartStopAll" Width="200"  Margin ="10,10,10,10" Click="StartStopAll_Click" />
+            <Button Content="Отправить заявку" Name="SendOrder" Width="200"  Margin ="10,10,10,10" Click="SendOrder_Click" />
+        </StackPanel>
+
+        <TextBox Grid.Row="1" Name="LogTextBox"  VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" Text="" Margin="2,2,2,2" />
+    </Grid>
+</Window>
